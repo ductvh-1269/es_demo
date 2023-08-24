@@ -1,4 +1,5 @@
-class Chewy::Filter::BaseFilter
+
+class Chewy::CustomFilter::BaseFilter
   private
   def must_query query
     {must: query}
@@ -22,5 +23,9 @@ class Chewy::Filter::BaseFilter
     Date.strptime(date, Settings.format_date.dd_mm_yyyy)
   rescue StandardError
     nil
+  end
+
+  def multi_match keyword
+    {multi_match: {query: keyword}}
   end
 end
