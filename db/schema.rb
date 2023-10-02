@@ -11,18 +11,18 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_21_074430) do
-  create_table "authors", charset: "utf8mb3", force: :cascade do |t|
+  create_table "authors", charset: "utf8", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
-  create_table "posts", charset: "utf8mb3", force: :cascade do |t|
+  create_table "posts", charset: "utf8", force: :cascade do |t|
     t.string "title"
     t.integer "author_id"
     t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
 end

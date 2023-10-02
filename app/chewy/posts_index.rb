@@ -1,8 +1,10 @@
 class PostsIndex < Chewy::Index
-  # define_type Post
+  index_scope Post.includes(:author)
   
-  field :author
+  field :author do
+    field :name
+  end
+
   field :content
   field :title
-
 end
