@@ -1,6 +1,6 @@
 
 default: &default
-  adapter: sqlite3
+  adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
@@ -25,4 +25,8 @@ production:
 
 staging:
   <<: *default
-  database: 
+  encoding: utf8
+  database: es_demo
+  pool: 5
+  username: root
+  password: "12345678"
